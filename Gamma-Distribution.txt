@@ -1,0 +1,25 @@
+gammadist <- function(x,a,b){
+
+x^(a-1) * exp(-x/b) / (b^a * gamma(a))
+
+}
+
+mysort <- function(v){
+n <- length(v)
+s <- c()
+for (i in 1:n){
+  mymin <- v[1]
+  index <- 1
+  for (j in 1:length(v)){
+    if (v[j] < mymin){
+      mymin = v[j]
+      index = j
+    }
+  }
+  v <- v[-index]
+  s <- c(s,mymin)
+}
+return(s)
+}
+
+v
